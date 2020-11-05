@@ -1,0 +1,45 @@
+<div class="postblocks">
+  {{#each posts}}
+    {{#if font_color}}
+    <style type="text/css">
+    #row-{{@index}} h2.post-title,
+    #row-{{@index}} .post-content{
+      color: {{font_color}};
+    }
+    </style>
+    {{/if}}
+    {{#if_even @index}}
+    <div class="row" id="row-{{@index}}">
+      <div class="col-sm" style="{{#if background_color}}background-color: {{background_color}};{{/if}}">
+        <div class="box">
+          <h2 class="post-title">{{{post_title}}}</h2>
+          <div class="post-content">
+            {{{post_content}}}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm featured-image right" style="background-image: url({{thumbnail_url}});">
+        <div class="box">
+          {{#if edit_link}}<a class="edit" href="{{edit_link}}">Edit</a>{{/if}}
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <div class="row" id="row-{{@index}}">
+      <div class="col-sm featured-image left" style="background-image: url({{thumbnail_url}});">
+        <div class="box">
+          {{#if edit_link}}<a class="edit" href="{{edit_link}}">Edit</a>{{/if}}
+        </div>
+      </div>
+      <div class="col-sm" style="{{#if background_color}}background-color: {{background_color}};{{/if}}">
+        <div class="box">
+          <h2 class="post-title">{{{post_title}}}</h2>
+          <div class="post-content">
+            {{{post_content}}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/if_even}}
+  {{/each}}
+</div>

@@ -1,0 +1,15 @@
+{
+    "name": "mwender/chalkagency-extras",
+    "description": "Mods for the Chalk Agency WP site.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Wender",
+            "email": "michael@michaelwender.com"
+        }
+    ],
+    "require": {
+        "zordius/lightncandy": "^1.2"
+    }
+}
